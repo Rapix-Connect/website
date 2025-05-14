@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapix Connect - Information Security Breach Reporting Procedure</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px; }
+        h3 { margin-top: 20px; }
+        ul { margin-left: 20px; }
+        li { margin-bottom: 5px; }
+        strong, b { color: #555; }
+        .note { background-color: #f9f9f9; border-left: 3px solid #007bff; padding: 10px; margin: 15px 0; }
+        .critical { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Rapix Connect - Information Security Breach Reporting Procedure</h1>
+    <p class="note">(Pilot Phase & Future Operations)</p>
+
+    <h2>1. Purpose</h2>
+    <p>This procedure outlines the steps for Rapix Connect co-founders to manage suspected or confirmed information security breaches, covering the current pilot and future operations. It aims for timely, effective breach management, minimizing harm, and ensuring compliance with UK data protection laws (UK GDPR, Data Protection Act 2018).</p>
+    <p>This procedure acknowledges Rapix Connect's roles:</p>
+    <ul>
+        <li>As a <strong>Data Processor</strong> for UK NHS Electronic Prescription Service (EPS) codes processed for client pharmacists/GPs.</li>
+        <li>As a <strong>Data Controller</strong> for user relationship data, including Supabase User IDs stored in its own database, and for the processing of user authentication data (like NHSmail addresses) handled via Supabase.</li>
+    </ul>
+
+    <h2>2. Scope</h2>
+    <p>This procedure applies to any incident involving potential or actual unauthorized access, loss, destruction, alteration, or disclosure of:</p>
+    <ul>
+        <li>Personal data for which Rapix Connect is a Data Controller (e.g., Supabase User IDs in Rapix Connect's database; indirectly, NHSmail addresses of GP users managed via Supabase through Rapix Connect's account).</li>
+        <li>Personal data for which Rapix Connect acts (or will act) as a Data Processor (NHS EPS codes).</li>
+        <li>Credentials providing access to third-party services storing personal data on behalf of Rapix Connect (e.g., Supabase).</li>
+        <li>Other sensitive or confidential information.</li>
+    </ul>
+
+    <h2>3. Definitions</h2>
+    <ul>
+        <li><strong>Personal Data Breach (UK GDPR):</strong> A security breach leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data.</li>
+        <li><strong>Data Controller (Rapix Connect for):</strong>
+            <ul>
+                <li>Supabase User IDs stored in its application database.</li>
+                <li>The purposes and means of processing GP user NHSmail addresses (and other authentication data) managed through its Supabase instance.</li>
+                <li>Potentially names of sole trader pharmacies.</li>
+            </ul>
+        </li>
+        <li><strong>Data Controller (Client Pharmacists/GPs for):</strong> Patient data linked to EPS codes.</li>
+        <li><strong>Data Processor (Rapix Connect as):</strong> For EPS codes processed for client pharmacists/GPs.</li>
+        <li><strong>Data Processor (Supabase as):</strong> For user authentication data (e.g., NHSmail addresses, OTP handling) processed on behalf of Rapix Connect.</li>
+        <li><strong>EPS Codes:</strong> Electronic Prescription Service codes. Encrypted at rest and in transit by Rapix Connect; patients not identifiable by Rapix Connect from codes alone.</li>
+        <li><strong>Supabase User ID:</strong> An identifier stored by Rapix Connect, linking to user accounts managed in Supabase. Pseudonymous personal data.</li>
+        <li><strong>ICO:</strong> Information Commissioner's Office.</li>
+        <li><strong>Data Processing Agreement (DPA):</strong> Legally binding contract between a Data Controller and Data Processor.</li>
+    </ul>
+
+    <h2>4. Roles and Responsibilities</h2>
+    <h3>Both Co-founders are jointly responsible for:</h3>
+    <ul>
+        <li>Understanding and adhering to this procedure.</li>
+        <li>Immediate internal reporting of suspected breaches.</li>
+        <li>Collaboration on breach response.</li>
+        <li>Maintaining breach records.</li>
+        <li><span class="critical">Ensuring compliant DPAs are in place with all clients (for EPS data processing) before official service launch AND with essential data processors like Supabase.</span></li>
+    </ul>
+
+    <h3>Software Engineer Co-founder (Technical Lead):</h3>
+    <ul>
+        <li>Leads technical investigation, containment, eradication, recovery.</li>
+        <li>Manages security of Rapix Connect systems and credentials for third-party services like Supabase.</li>
+        <li>Advises on technical aspects.</li>
+    </ul>
+
+    <h3>Pharmacist Co-founder (CEO - Compliance & Communications Lead):</h3>
+    <ul>
+        <li>Leads overall breach management and risk assessment.</li>
+        <li>Manages communications with affected Data Controllers (clients) for EPS data breaches.</li>
+        <li>Manages communications with ICO and affected GP users if a breach of data controlled by Rapix Connect occurs (including via Supabase compromise originating from Rapix Connect's end).</li>
+        <li>Ensures reporting obligations are met.</li>
+        <li>Documents the breach response.</li>
+    </ul>
+
+    <h2>5. Reporting and Response Procedure</h2>
+    <h3>Step 1: Discovery and Initial Internal Reporting</h3>
+    <ul>
+        <li>Immediate communication between co-founders of any suspected incident.</li>
+        <li>Initial details: What, when, who, systems/data (including potential Supabase impact), actions?</li>
+        <li>Monitor user reporting channels (<code>hello@rapixconnect.com</code>, public phone number) and notifications from processors like Supabase.</li>
+    </ul>
+
+    <h3>Step 2: Immediate Actions & Containment (Technical Lead)</h3>
+    <ul>
+        <li>Implement actions to contain the breach:
+            <ul>
+                <li>Isolating systems.</li>
+                <li><strong>If Supabase access is suspected to be compromised: Immediately take steps to secure the Supabase account (e.g., change passwords, review API keys, contact Supabase support if needed).</strong></li>
+                <li>Changing credentials for Rapix Connect systems.</li>
+                <li>Preserving evidence.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Step 3: Assessment and Triage (Both Co-founders)</h3>
+    <ul>
+        <li><strong>Confirm if a personal data breach occurred.</strong></li>
+        <li><strong>Identify the type(s) of data and systems involved:</strong>
+            <ul>
+                <li>Rapix Connect database (Supabase User IDs)?</li>
+                <li>Rapix Connect's access to its Supabase instance (potentially exposing NHSmail addresses, etc.)?</li>
+                <li>EPS codes (Rapix Connect as Processor)?</li>
+            </ul>
+        </li>
+        <li><strong>Assess severity and scope:</strong> Consider if the breach is of Rapix Connect’s own database or a compromise of access to data held by Supabase.</li>
+        <li><strong>Assess risk:</strong>
+            <ul>
+                <li><strong>Breach of Supabase User IDs from Rapix Connect DB:</strong> Assess risk. While pseudonymous, is linkage possible or harm likely?</li>
+                <li><strong>Breach of Rapix Connect's Supabase Credentials/Access (exposing NHSmail addresses, etc.):</strong> This is likely to be high risk. Determine if ICO/data subject notification is required.</li>
+                <li><strong>For EPS Code Data (Processor):</strong> Notify the Data Controller (client).</li>
+            </ul>
+        </li>
+        <li>Document assessment.</li>
+    </ul>
+
+    <h3>Step 4: Notification (Communications Lead, based on assessment)</h3>
+    <ul>
+        <li><strong>Internal Record Keeping:</strong> Document ALL personal data breaches.</li>
+        <li><strong>Processor Notifications (e.g., from Supabase to Rapix Connect):</strong> If Supabase notifies Rapix Connect of a breach on their end affecting your data, activate this response procedure.</li>
+    </ul>
+    <p><strong>If the breach involves EPS Codes (Rapix Connect as Processor):</strong></p>
+    <ul>
+        <li>Notify affected Data Controller(s) (Clients) without undue delay.
+            <ul>
+                <li><em>Pilot:</em> Inform pilot participants.</li>
+                <li><em>Official Operations:</em> Follow DPA terms.</li>
+            </ul>
+        </li>
+        <li>Assist Data Controllers.</li>
+    </ul>
+    <p><strong>If the breach involves data controlled by Rapix Connect (e.g., Supabase User IDs from own DB, or NHSmail addresses via compromised Supabase access from Rapix Connect's end):</strong></p>
+    <ul>
+        <li><strong>Information Commissioner's Office (ICO):</strong>
+            <ul>
+                <li>Notify ICO without undue delay (ideally within 72 hours) if the breach is likely to result in a risk to individuals' rights and freedoms. A compromise of credentials leading to access to NHSmail addresses would likely meet this threshold.</li>
+            </ul>
+        </li>
+        <li><strong>Affected Data Subjects (GP Users):</strong>
+            <ul>
+                <li>Inform affected GP users directly and without undue delay if the breach is likely to result in a high risk (e.g., their NHSmail and authentication details exposed via Supabase due to Rapix Connect's account compromise).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Step 5: Investigation and Recovery (Technical Lead, Communications Lead supports)</h3>
+    <ul>
+        <li>Detailed root cause analysis.</li>
+        <li>Recover systems/data, implement preventative measures (e.g., review Supabase security settings, API key rotation, access controls).</li>
+    </ul>
+
+    <h3>Step 6: Post-Incident Review and Lessons Learned (Both Co-founders)</h3>
+    <ul>
+        <li>Thorough review.</li>
+        <li>Update procedures, policies, DPAs, security controls (including for third-party services).</li>
+        <li>Document.</li>
+    </ul>
+
+    <h2>6. Key Considerations & Best Practices</h2>
+    <ul>
+        <li><strong>Data Processing Agreements (DPAs): <span class="critical">CRITICAL.</span></strong>
+            <ul>
+                <li><strong>With Clients (Pharmacists/GPs):</strong> Essential before official launch for EPS data.</li>
+                <li><strong>With Processors (Supabase):</strong> Ensure a valid DPA is in place with Supabase. Review their terms regarding security and breach notification.</li>
+            </ul>
+        </li>
+        <li><strong>Security of Credentials:</strong> Implement strong security measures for all credentials, especially those providing administrative access to services like Supabase (e.g., strong unique passwords, multi-factor authentication where available for admin accounts, secure API key management).</li>
+        <li><strong>Understanding Data Flows:</strong> Clearly map where all personal data resides (Rapix Connect DB, Supabase, etc.) and who is responsible at each stage.</li>
+        <li><strong>Legal Counsel:</strong> Strongly recommended for DPA drafting/review and overall GDPR compliance.</li>
+        <li><strong>Data Security and Protection Toolkit (DSPT):</strong> Investigate relevance for official NHS operations.</li>
+    </ul>
+
+    <h2>7. Contact Information</h2>
+    <ul>
+        <li><strong>Internal Reporting:</strong>
+            <ul>
+                <li>[Co-founder 1 Name, Phone, Secure Email]</li>
+                <li>[Co-founder 2 Name, Phone, Secure Email]</li>
+            </ul>
+        </li>
+        <li><strong>External Contacts (as needed):</strong>
+            <ul>
+                <li>Information Commissioner's Office (ICO): Breach Helpline (verify number on ICO website), Online Reporting Portal.</li>
+                <li>Legal Counsel: [Details if/when retained]</li>
+                <li>Supabase Support: [Relevant contact for security incidents]</li>
+                <li>(Potentially) NHS Digital Data Security Centre: [Phone number, for advice if deemed necessary]</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>8. Procedure Review</h2>
+    <ul>
+        <li>Annually, after incidents, regulatory changes, or significant system changes (like introducing a new processor).</li>
+    </ul>
+
+    <hr>
+
+    <h2>Immediate Next Steps for Rapix Connect (Considering Current Setup):</h2>
+    <ol>
+        <li><strong>Review and Adopt for Pilot:</strong> Adapt and use this procedure now.</li>
+        <li><strong>DPA with Supabase:</strong> Verify you have a DPA in place with Supabase (usually part of their standard terms for business users). Understand their security commitments and your responsibilities as a controller using their service.</li>
+        <li><strong>Secure Supabase Access:</strong> Review and harden all access controls and credentials related to your Supabase instance.</li>
+        <li><strong>DPAs with Clients:</strong> Plan for these before any official launch.</li>
+        <li><strong>Legal Consultation:</strong> Strongly consider this for overall compliance.</li>
+    </ol>
+
+</body>
+</html>
