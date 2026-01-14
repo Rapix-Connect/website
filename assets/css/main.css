@@ -970,17 +970,31 @@ section,
   margin-bottom: 30px;
 }
 
-.hero .content .why-box .more-btn {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--contrast-color), transparent 80%);
+.more-btn {
   display: inline-block;
   padding: 6px 30px 8px 30px;
   border-radius: 50px;
   transition: all ease-in-out 0.4s;
 }
 
-.hero .content .why-box .more-btn i {
+.more-btn i {
   font-size: 14px;
+}
+
+.more-btn {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+.more-btn:hover {
+  color: var(--default-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 95%);
+  border: 1px solid var(--accent-color);
+}
+
+.hero .content .why-box .more-btn {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--contrast-color), transparent 80%);
 }
 
 .hero .content .why-box .more-btn:hover {
