@@ -1,0 +1,244 @@
+---
+const {
+  title = "Rapix Connect",
+  description = "",
+  keywords = "",
+  bodyClass = "index-page",
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isIndex = pathname === "/" || pathname === "/index.html";
+const navBase = isIndex ? "" : "index.html";
+const navHref = (hash) => `${navBase}${hash}`;
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/img/favicon.svg" sizes="any" type="image/svg+xml">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class={bodyClass}>
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:hello@rapixconnect.com">hello@rapixconnect.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+44 7515 058395</span></i>
+        </div>
+        <!--         
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div> -->
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="/assets/img/logo.svg" alt="">
+          <h1 class="sitename">Rapix Connect</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href={navHref("#hero")} class={isIndex ? "active" : undefined}>Home<br></a></li>
+            <li><a href={navHref("#about")}>About</a></li>
+            <li><a href={navHref("#benefits")}>Benefits</a></li>
+            <li><a href={navHref("#trusted-by")}>Trusted by</a></li>
+            <!-- <li><a href="#how-does-it-work">How does it work?</a></li> -->
+            <li><a href={navHref("#pricing")}>Pricing</a></li>
+            <li><a href={navHref("#team")}>Team</a></li>
+            <li><a href={navHref("#faq")}>FAQ</a></li>
+
+            <li class="dropdown cta-btn d-none d-sm-block">
+              <span>App</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+              <ul>
+                <li><a href="download-windows.html">
+                    Download for Windows
+                  </a></li>
+                <li><a href="https://app.rapixconnect.com">Launch Web App</a></li>
+                <!-- <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li> -->
+              </ul>
+            </li>
+
+            <li class="d-block d-sm-none"><a style="font-weight: bold" href="https://app.rapixconnect.com">Install
+                App</a></li>
+
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <!-- <a class="cta-btn d-none d-sm-block" href="">Launch Web App</a> -->
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+    <slot />
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Rapix Connect</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p><strong>Company Number:</strong> <span><a
+                  href="https://find-and-update.company-information.service.gov.uk/company/16152849"
+                  target="_blank">16152849</a></span></p>
+            <p><strong>Address:</strong>
+            <div style="padding-left: 20px;">
+              55 Manor Road, Stretford,
+              <br>Manchester, England, M32 9HT
+            </div>
+            </p>
+          </div>
+          <!-- <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div> -->
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="accessibility-statement.html">Accessibility statement</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6 col-md-3 footer-links">
+          <h4>Certifications</h4>
+
+          <ul>
+            <li>
+              <span>
+                Rapix Connect has undergone <strong>independent penetration testing by a CREST-accredited security
+                  provider</strong> to ensure data protection and system resilience.
+              </span>
+            </li>
+            <li class="d-flex flex-wrap align-items-center gap-3">
+              <img src="/assets/img/certifications/dspt.png" width="365px" class="img-fluid me-3"
+                alt="NHS Digital Data Security and Protection Toolkit - Standards Met">
+              <img src="/assets/img/certifications/dcb0129.png" width="170px" class="img-fluid me-3"
+                alt="DCB0129 Compliant">
+              <img src="/assets/img/certifications/cyber-essentials-plus-badge.png" width="100px" class="img-fluid me-3"
+                alt="Cyber Essentials+ Certified">
+            </li>
+          </ul>
+        </div>
+
+        <!-- 
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Hic solutasetp</h4>
+          <ul>
+            <li><a href="#">Molestiae accusamus iure</a></li>
+            <li><a href="#">Excepturi dignissimos</a></li>
+            <li><a href="#">Suscipit distinctio</a></li>
+            <li><a href="#">Dilecta</a></li>
+            <li><a href="#">Sit quas consectetur</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nobis illum</h4>
+          <ul>
+            <li><a href="#">Ipsam</a></li>
+            <li><a href="#">Laudantium dolorum</a></li>
+            <li><a href="#">Dinera</a></li>
+            <li><a href="#">Trodelas</a></li>
+            <li><a href="#">Flexo</a></li>
+          </ul>
+        </div> -->
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright 2025</span> <strong class="px-1 sitename">Rapix Connect</strong> <span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
+          href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script is:inline src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script is:inline src="/assets/vendor/php-email-form/validate.js"></script>
+  <script is:inline src="/assets/vendor/aos/aos.js"></script>
+  <script is:inline src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script is:inline src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script is:inline src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script is:inline src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

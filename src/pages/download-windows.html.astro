@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Download for Windows - Rapix Connect">
+  <section class="section">
+    <div class="container" style="padding: 20px;">
+      <h1>Download Rapix Connect for Windows</h1>
+      <p>Pick the installer that matches your Windows version.</p>
+
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <div class="p-4 border rounded h-100">
+            <h3>Windows 10/11 and Windows Server 2016+</h3>
+            <p>Recommended for modern Windows machines.</p>
+            <div class="text-center">
+              <a class="more-btn"
+                href="https://app-updates.rapixconnect.com/tauri/windows/Rapix Connect_1.0.4_x64_en-US.msi">
+                <span>Download for Windows</span> <i class="bi bi-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 border rounded h-100">
+            <h3>Windows Server 2012 (special build)</h3>
+            <p>This installer is only for Windows Server 2012. Modern Windows versions should use the standard build.</p>
+            <p>This build bundles the latest WebView2 version supported on Windows Server 2012.</p>
+            <div class="text-center">
+              <a class="more-btn"
+                href="https://github.com/Rapix-Connect/installers/releases/download/v1.0.4/Rapix.Connect_winsrv2012_1.0.4_x64_en-US.msi">
+                <span>Download for Windows Server 2012</span> <i class="bi bi-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <p><strong>macOS and Linux:</strong> Versions are available on-demand for customers. Please contact us to request
+          access.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
