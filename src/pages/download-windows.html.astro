@@ -9,28 +9,41 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="row gy-4">
         <div class="col-lg-6">
-          <div class="p-4 border rounded h-100">
-            <h3>Windows 10/11 and Windows Server 2016+</h3>
+          <div class="p-4 border rounded h-100 d-flex flex-column">
+            <h3>Windows 7+ (Server 2016+)</h3>
             <p>Recommended for modern Windows machines.</p>
-            <div class="text-center">
-              <a class="more-btn"
-                href="https://app-updates.rapixconnect.com/tauri/windows/Rapix Connect_1.0.4_x64_en-US.msi">
-                <span>Download for Windows</span> <i class="bi bi-chevron-right"></i>
-              </a>
+            <div class="mt-auto">
+              <div class="text-center">
+                <a class="more-btn"
+                  href="https://app-updates.rapixconnect.com/tauri/windows/Rapix Connect_1.0.4_x64_en-US.msi">
+                  <span>Download for Windows</span> <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+              <div class="border-top mt-3 pt-2"></div>
+              <p class="text-muted small mb-0 opacity-75">
+                <span class="d-block fw-semibold mb-1">Technical note (IT only)</span>
+                <span>This installer embeds the WebView2 bootstrapper for Windows 7 compatibility.</span>
+              </p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-6">
-          <div class="p-4 border rounded h-100">
-            <h3>Windows Server 2012 (special build)</h3>
+          <div class="p-4 border rounded h-100 d-flex flex-column">
+            <h3>Windows Server 2012</h3>
             <p>This installer is only for Windows Server 2012. Modern Windows versions should use the standard build.</p>
-            <p>This build bundles the latest WebView2 version supported on Windows Server 2012.</p>
-            <div class="text-center">
-              <a class="more-btn"
-                href="https://github.com/Rapix-Connect/installers/releases/download/v1.0.4/Rapix.Connect_winsrv2012_1.0.4_x64_en-US.msi">
-                <span>Download for Windows Server 2012</span> <i class="bi bi-chevron-right"></i>
-              </a>
+            <div class="mt-auto">
+              <div class="text-center">
+                <a class="more-btn"
+                  href="https://github.com/Rapix-Connect/installers/releases/download/v1.0.4/Rapix.Connect_winsrv2012_1.0.4_x64_en-US.msi">
+                  <span>Download for Windows Server 2012</span> <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+              <div class="border-top mt-3 pt-2"></div>
+              <p class="text-muted small mb-0 opacity-75">
+                <span class="d-block fw-semibold mb-1">Technical note (IT only)</span>
+                <span>This build bundles the latest WebView2 version supported on Windows Server 2012.</span>
+              </p>
             </div>
           </div>
         </div>
