@@ -21,7 +21,6 @@ pnpm run preview
 - `src/layouts/BaseLayout.astro` — shared layout extracted from the original `index.html`
 - `src/pages/index.astro` — homepage
 - `src/pages/*.html.astro` — preserves `.html` URLs (e.g. `privacy-policy.html`)
-- `src/content/privacy-policy.html` — source HTML for the privacy policy body
 - `public/assets` — static assets (CSS/JS/images)
 - `public/CNAME` — custom domain for GitHub Pages
 
