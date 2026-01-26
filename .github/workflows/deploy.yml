@@ -23,8 +23,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
       - run: corepack enable
+      - run: corepack prepare pnpm@9.12.3 --activate
+      - name: Get pnpm store directory
+        run: echo "PNPM_STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PNPM_STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
       - uses: actions/upload-pages-artifact@v3
