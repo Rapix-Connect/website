@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { additionalClientCount, featuredClients } from "../data/clients";
+import { companyPhone } from "../data/company";
 ---
 <BaseLayout title="Rapix Connect - Effective Drug Requests between GPs and Pharmacies">
   <!-- Hero Section -->
@@ -734,7 +735,7 @@ import { additionalClientCount, featuredClients } from "../data/clients";
             <i class="bi bi-telephone flex-shrink-0"></i>
             <div>
               <h3>Call Us</h3>
-              <p>+44 7515 058395</p>
+              <p>{companyPhone}</p>
             </div>
           </div>
         </div>

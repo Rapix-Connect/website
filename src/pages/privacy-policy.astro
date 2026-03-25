@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { companyAddress, companyPhone } from "../data/company";
 ---
 <BaseLayout title="Privacy Policy - Rapix Connect">
   <section class="section">
@@ -28,7 +29,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <p>
       <strong>RAPIX CONNECT LIMITED</strong><br>
-      Registered Office: 55 Manor Road, Stretford, Manchester, England, M32 9HT<br>
+      Registered Office: {companyAddress.join(" ")}<br>
       Company Number: 16152849
       </p>
 
@@ -241,8 +242,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       please contact us:</p>
       <ul>
       <li><strong>By email:</strong> <a href="mailto:hello@rapixconnect.com">hello@rapixconnect.com</a></li>
-      <li><strong>By phone:</strong> +44 7515 058395</li>
-      <li><strong>By post:</strong> RAPIX CONNECT LIMITED, 55 Manor Road, Stretford, Manchester, England, M32 9HT</li>
+      <li><strong>By phone:</strong> {companyPhone}</li>
+      <li><strong>By post:</strong> RAPIX CONNECT LIMITED, {companyAddress.join(" ")}</li>
       </ul>
       <p>Our designated Data Protection Officer is Abdullah Siddiqi available via the contact details above.</p>
 
