@@ -89,6 +89,12 @@ export const clients: Client[] = [
     category: "pharmacy",
   },
   {
+    slug: "crewe-pharmacy-and-travel-vaccination-centre",
+    name: "Crewe Pharmacy & Travel Vaccination Centre",
+    website: "https://www.nhs.uk/services/pharmacy/crewe-pharmacy-and-travel-vaccination-ctr/FQG38",
+    category: "pharmacy",
+  },
+  {
     slug: "dr-maassarani-and-partners",
     name: "Dr Maassarani and Partners",
     website: "https://www.mazmedical.nhs.uk/",
