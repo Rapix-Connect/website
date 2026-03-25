@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { additionalClientCount, featuredClients } from "../data/clients";
 ---
 <BaseLayout title="Rapix Connect - Effective Drug Requests between GPs and Pharmacies">
   <!-- Hero Section -->
@@ -259,85 +260,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
       <div class="row g-6 row-gap-4 mx-2 justify-content-center">
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item company-dark">
-            <a href="https://www.cohenschemist.co.uk/" target="_blank">
-              <img src="/assets/img/companies/cohens-chemists.svg" alt="Cohen Chemists" class="img-fluid">
-            </a>
+        {featuredClients.map((client) => (
+          <div class="col-lg-3 col-md-4">
+            <div class:list={["gallery-item", client.logo.dark && "company-dark"]}>
+              <a href={client.website} target="_blank" rel="noopener noreferrer">
+                <img src={client.logo.src} alt={client.name} class="img-fluid">
+              </a>
+            </div>
           </div>
-        </div>
+        ))}
 
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://hollowoodchemists.com" target="_blank">
-              <img src="/assets/img/companies/hollowood-chemists.webp" alt="Hollowood Chemists" class="img-fluid">
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://clearpharmacy.com/" target="_blank">
-              <img src="/assets/img/companies/clear-pharmacy.png" alt="Clear Pharmacy" class="img-fluid">
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://www.nhs.uk/services/pharmacy/galgate-pharmacy/FTC57" target="_blank">
-              <img src="/assets/img/companies/galgate-pharmacy.png" alt="Galgate Pharmacy" class="img-fluid">
-            </a>
-          </div>
-        </div>
-
-        {/*
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://dearnevalleypharmacy.co.uk/" target="_blank">
-              <img src="/assets/img/companies/dearne-valley-pharmacy.png" alt="Dearne Valley Pharmacy" class="img-fluid">
-            </a>
-          </div>
-        </div>
-        */}
-
-        {/*
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://www.nhs.uk/services/pharmacy/rydale-pharmacy/FWF77" target="_blank">
-              <img src="/assets/img/companies/rydale-pharmacy.png" alt="Rydale Pharmacy" class="img-fluid">
-            </a>
-          </div>
-        </div>
-        */}
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://imaanhealthcare.com/" target="_blank">
-              <img src="/assets/img/companies/imaan-healthcare.png" alt="Imaan Healthcare" class="img-fluid">
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://www.ropegreenmedicalcentre.nhs.uk/" target="_blank">
-              <img src="/assets/img/companies/rope-green-medical-centre.png" alt="Rope Green Medical Centre"
-                class="img-fluid">
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-          <div class="gallery-item">
-            <a href="https://www.lancastermedicalpractice.co.uk/" target="_blank">
-              <img src="/assets/img/companies/lancaster-medical-practice.png" alt="Lancaster Medical Practice"
-                class="img-fluid">
-            </a>
-          </div>
+        <div class="col-12 text-center pt-3">
+          <a href="clients.html" class="more-btn">
+            <span>And {additionalClientCount} other clients</span> <i class="bi bi-chevron-right"></i>
+          </a>
         </div>
       </div>
 

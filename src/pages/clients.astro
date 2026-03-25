@@ -1,0 +1,203 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { clients, gpSurgeryClients, pharmacyClients } from "../data/clients";
+
+const clientGroups = [
+  {
+    title: "GP surgeries",
+    description: "Primary care practices currently listed as clients.",
+    clients: gpSurgeryClients,
+  },
+  {
+    title: "Pharmacy organisations",
+    description: "Community pharmacies and pharmacy groups currently listed as clients.",
+    clients: pharmacyClients,
+  },
+];
+---
+<BaseLayout
+  title="Clients - Rapix Connect"
+  description="Full list of GP surgeries and pharmacy organisations currently using Rapix Connect."
+  bodyClass="clients-page"
+>
+  <section class="section light-background">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our clients</h2>
+        <p>{clients.length} organisations currently listed across GP surgeries and pharmacy organisations.</p>
+      </div>
+
+      <div class="row gy-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6">
+          <div class="client-stat-card">
+            <span class="client-stat-label">Total listed</span>
+            <strong>{clients.length}</strong>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="client-stat-card">
+            <span class="client-stat-label">GP surgeries</span>
+            <strong>{gpSurgeryClients.length}</strong>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="client-stat-card">
+            <span class="client-stat-label">Pharmacy organisations</span>
+            <strong>{pharmacyClients.length}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+        {clientGroups.map((group, index) => (
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay={200 + index * 100}>
+            <article class="client-group-card">
+              <div class="client-group-heading">
+                <div>
+                  <h3>{group.title}</h3>
+                  <p>{group.description}</p>
+                </div>
+                <span>{group.clients.length}</span>
+              </div>
+
+              <ul class="client-list" role="list">
+                {group.clients.map((client) => (
+                  <li>
+                    <a href={client.website} target="_blank" rel="noopener noreferrer">
+                      <span>{client.name}</span>
+                      <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="350">
+        <a href="index.html#trusted-by" class="more-btn">
+          <span>Back to featured clients</span> <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .client-stat-card,
+  .client-group-card {
+    background: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+    border-radius: 24px;
+    box-shadow: 0px 14px 40px color-mix(in srgb, var(--default-color), transparent 92%);
+  }
+
+  .client-stat-card {
+    height: 100%;
+    padding: 28px 32px;
+    text-align: center;
+  }
+
+  .client-stat-card strong {
+    display: block;
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .client-stat-label {
+    display: block;
+    margin-bottom: 12px;
+    color: color-mix(in srgb, var(--default-color), transparent 25%);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .client-group-card {
+    height: 100%;
+    padding: 32px;
+  }
+
+  .client-group-heading {
+    align-items: start;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .client-group-heading h3 {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .client-group-heading p {
+    margin: 0;
+  }
+
+  .client-group-heading span {
+    align-items: center;
+    background: color-mix(in srgb, var(--accent-color), transparent 88%);
+    border-radius: 999px;
+    color: var(--accent-color);
+    display: inline-flex;
+    flex-shrink: 0;
+    font-weight: 700;
+    justify-content: center;
+    min-width: 52px;
+    padding: 10px 14px;
+  }
+
+  .client-list {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .client-list a {
+    align-items: center;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+    border-radius: 16px;
+    color: var(--heading-color);
+    display: flex;
+    font-weight: 600;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 16px 18px;
+    transition: 0.25s ease;
+  }
+
+  .client-list a:hover {
+    border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+  }
+
+  .client-list i {
+    flex-shrink: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 575px) {
+    .client-stat-card,
+    .client-group-card {
+      border-radius: 20px;
+    }
+
+    .client-group-card {
+      padding: 24px;
+    }
+
+    .client-group-heading {
+      flex-direction: column;
+    }
+  }
+</style>
