@@ -113,6 +113,12 @@ export const clients: Client[] = [
     category: "pharmacy",
   },
   {
+    slug: "limelight-health-and-wellbeing-hub",
+    name: "Limelight Health and Wellbeing Hub",
+    website: "https://www.limelighthealthhub.nhs.uk/",
+    category: "gp-surgery",
+  },
+  {
     slug: "lower-house-pharmacy",
     name: "Lower House Pharmacy",
     website: "https://lowerhousepharmacy.co.uk/",
