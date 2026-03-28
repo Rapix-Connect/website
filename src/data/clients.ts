@@ -7,6 +7,7 @@ export interface Client {
   slug: string;
   name: string;
   website: string;
+  featured?: boolean;
   category: "gp-surgery" | "pharmacy";
   logo?: ClientLogo;
 }
@@ -17,6 +18,7 @@ export const clients: Client[] = [
     name: "Cohens Chemist",
     website: "https://www.cohenschemist.co.uk/",
     category: "pharmacy",
+    featured: true,
     logo: {
       src: "/assets/img/companies/cohens-chemists.svg",
       dark: true,
@@ -27,6 +29,7 @@ export const clients: Client[] = [
     name: "Hollowood Chemists",
     website: "https://hollowoodchemists.com/",
     category: "pharmacy",
+    featured: true,
     logo: {
       src: "/assets/img/companies/hollowood-chemists.webp",
     },
@@ -36,6 +39,7 @@ export const clients: Client[] = [
     name: "Clear Pharmacy",
     website: "https://clearpharmacy.com/",
     category: "pharmacy",
+    featured: true,
     logo: {
       src: "/assets/img/companies/clear-pharmacy.png",
     },
@@ -45,6 +49,7 @@ export const clients: Client[] = [
     name: "Galgate Pharmacy",
     website: "https://www.nhs.uk/services/pharmacy/galgate-pharmacy/FTC57",
     category: "pharmacy",
+    featured: true,
     logo: {
       src: "/assets/img/companies/galgate-pharmacy.png",
     },
@@ -54,6 +59,7 @@ export const clients: Client[] = [
     name: "Imaan Healthcare",
     website: "https://imaanhealthcare.com/",
     category: "pharmacy",
+    featured: true,
     logo: {
       src: "/assets/img/companies/imaan-healthcare.png",
     },
@@ -63,6 +69,7 @@ export const clients: Client[] = [
     name: "Rope Green Medical Centre",
     website: "https://www.ropegreenmedicalcentre.nhs.uk/",
     category: "gp-surgery",
+    featured: true,
     logo: {
       src: "/assets/img/companies/rope-green-medical-centre.png",
     },
@@ -72,6 +79,7 @@ export const clients: Client[] = [
     name: "Lancaster Medical Practice",
     website: "https://www.lancastermedicalpractice.co.uk/",
     category: "gp-surgery",
+    featured: true,
     logo: {
       src: "/assets/img/companies/lancaster-medical-practice.png",
     },
@@ -154,23 +162,23 @@ export const clients: Client[] = [
     website: "https://www.wingatemedicalcentre.co.uk/",
     category: "gp-surgery",
   },
-];
-
-const featuredClientSlugs = [
-  "cohens-chemist",
-  "hollowood-chemists",
-  "clear-pharmacy",
-  "galgate-pharmacy",
-  "imaan-healthcare",
-  "rope-green-medical-centre",
-  "lancaster-medical-practice",
+  {
+    slug: "rowlands-pharmacy",
+    name: "Rowlands Pharmacy",
+    website: "https://rowlandspharmacy.co.uk/",
+    category: "pharmacy",
+    featured: true,
+    logo: {
+      src: "/assets/img/companies/rowlands-pharmacy.png",
+    }
+  }
 ];
 
 const byName = (left: Client, right: Client) => left.name.localeCompare(right.name);
 
-export const featuredClients = featuredClientSlugs
-  .map((slug) => clients.find((client) => client.slug === slug))
-  .filter((client): client is Client & { logo: ClientLogo } => Boolean(client?.logo));
+export const featuredClients = clients
+  .filter((client): client is Client & { logo: ClientLogo } => (client?.featured ?? false) && Boolean(client?.logo))
+  .toSorted(byName);
 
 export const gpSurgeryClients = clients
   .filter((client) => client.category === "gp-surgery")
