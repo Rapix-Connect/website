@@ -65,6 +65,18 @@ export const clients: Client[] = [
     },
   },
   {
+    slug: "greenmed-pharmacy",
+    name: "Greenmed Pharmacy",
+    website: "https://greenmedpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
+    slug: "our-pharmacy",
+    name: "Our Pharmacy",
+    website: "https://www.nhs.uk/services/pharmacy/our-pharmacy/FJF58",
+    category: "pharmacy",
+  },
+  {
     slug: "rope-green-medical-centre",
     name: "Rope Green Medical Centre",
     website: "https://www.ropegreenmedicalcentre.nhs.uk/",
