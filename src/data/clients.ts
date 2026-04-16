@@ -139,6 +139,12 @@ export const clients: Client[] = [
     category: "gp-surgery",
   },
   {
+    slug: "lees-road-pharmacy",
+    name: "Lees Road Pharmacy",
+    website: "https://leesroadpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
     slug: "lower-house-pharmacy",
     name: "Lower House Pharmacy",
     website: "https://lowerhousepharmacy.co.uk/",
