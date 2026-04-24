@@ -199,6 +199,12 @@ export const clients: Client[] = [
     category: "gp-surgery",
   },
   {
+    slug: "reeds-pharmacy",
+    name: "Reeds Pharmacy",
+    website: "https://www.reeds-pharmacy.co.uk",
+    category: "pharmacy",
+  },
+  {
     slug: "rowlands-pharmacy",
     name: "Rowlands Pharmacy",
     website: "https://rowlandspharmacy.co.uk/",
