@@ -45,6 +45,12 @@ export const clients: Client[] = [
     },
   },
   {
+    slug: "apex-pharmacy",
+    name: "Apex Pharmacy",
+    website: "https://apexpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
     slug: "galgate-pharmacy",
     name: "Galgate Pharmacy",
     website: "https://www.nhs.uk/services/pharmacy/galgate-pharmacy/FTC57",
@@ -68,6 +74,12 @@ export const clients: Client[] = [
     slug: "greenmed-pharmacy",
     name: "Greenmed Pharmacy",
     website: "https://greenmedpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
+    slug: "g-pennant-roberts",
+    name: "G Pennant Roberts",
+    website: "https://www.nhs.uk/services/pharmacy/g-pennant-roberts/FXF96",
     category: "pharmacy",
   },
   {
