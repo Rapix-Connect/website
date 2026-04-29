@@ -127,6 +127,12 @@ export const clients: Client[] = [
     category: "pharmacy",
   },
   {
+    slug: "elliotts-pharmacy",
+    name: "Elliotts Pharmacy",
+    website: "https://elliottspharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
     slug: "dr-maassarani-and-partners",
     name: "Dr Maassarani and Partners",
     website: "https://www.mazmedical.nhs.uk/",
@@ -178,6 +184,12 @@ export const clients: Client[] = [
     slug: "pointer-court-pharmacy",
     name: "Pointer Court Pharmacy",
     website: "https://pointercourtpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
+    slug: "range-pharmacy",
+    name: "Range Pharmacy",
+    website: "https://www.nhs.uk/services/pharmacy/range-pharmacy/FF590",
     category: "pharmacy",
   },
   {
