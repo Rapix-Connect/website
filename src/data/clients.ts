@@ -133,6 +133,12 @@ export const clients: Client[] = [
     category: "pharmacy",
   },
   {
+    slug: "empire-pharmacy",
+    name: "Empire Pharmacy",
+    website: "https://empirepharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
     slug: "dr-maassarani-and-partners",
     name: "Dr Maassarani and Partners",
     website: "https://www.mazmedical.nhs.uk/",
