@@ -55,7 +55,6 @@ export const clients: Client[] = [
     name: "Galgate Pharmacy",
     website: "https://www.nhs.uk/services/pharmacy/galgate-pharmacy/FTC57",
     category: "pharmacy",
-    featured: true,
     logo: {
       src: "/assets/img/companies/galgate-pharmacy.png",
     },
@@ -121,6 +120,12 @@ export const clients: Client[] = [
     category: "pharmacy",
   },
   {
+    slug: "c-t-pharmacy",
+    name: "C & T Pharmacy",
+    website: "https://ctpharmacy.co.uk/",
+    category: "pharmacy",
+  },
+  {
     slug: "crewe-pharmacy-and-travel-vaccination-centre",
     name: "Crewe Pharmacy & Travel Vaccination Centre",
     website: "https://www.nhs.uk/services/pharmacy/crewe-pharmacy-and-travel-vaccination-ctr/FQG38",
@@ -137,6 +142,17 @@ export const clients: Client[] = [
     name: "Empire Pharmacy",
     website: "https://empirepharmacy.co.uk/",
     category: "pharmacy",
+  },
+  {
+    slug: "everest-pharmacy",
+    name: "Everest Pharmacy",
+    website: "https://everestpharmacy.co.uk/",
+    category: "pharmacy",
+    featured: true,
+    logo: {
+      src: "/assets/img/companies/everest-pharmacy.png",
+      dark: true,
+    },
   },
   {
     slug: "dr-maassarani-and-partners",
