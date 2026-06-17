@@ -35,11 +35,20 @@ export const clients: Client[] = [
     },
   },
   {
+    slug: "love-my-pharmacy",
+    name: "LoveMyPharmacy",
+    website: "https://lovemypharmacy.co.uk/",
+    category: "pharmacy",
+    featured: true,
+    logo: {
+      src: "/assets/img/companies/love-my-pharmacy.png",
+    },
+  },
+  {
     slug: "clear-pharmacy",
     name: "Clear Pharmacy",
     website: "https://clearpharmacy.com/",
     category: "pharmacy",
-    featured: true,
     logo: {
       src: "/assets/img/companies/clear-pharmacy.png",
     },
