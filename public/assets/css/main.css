@@ -1072,6 +1072,10 @@ section,
   top: calc(50% - 47px);
 }
 
+#trusted-by .gallery-item {
+  text-align: center;
+}
+
 #trusted-by .company-dark {
   background-color: var(--heading-color);
   padding: 0.2rem 0.6rem;

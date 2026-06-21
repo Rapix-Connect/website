@@ -35,6 +35,16 @@ export const clients: Client[] = [
     },
   },
   {
+    slug: "manor-pharmacy",
+    name: "Manor Pharmacy",
+    website: "https://manorpharmacyonline.co.uk/",
+    category: "pharmacy",
+    featured: true,
+    logo: {
+      src: "/assets/img/companies/manor-pharmacy.png",
+    },
+  },
+  {
     slug: "love-my-pharmacy",
     name: "LoveMyPharmacy",
     website: "https://lovemypharmacy.co.uk/",
@@ -101,7 +111,7 @@ export const clients: Client[] = [
     name: "Rope Green Medical Centre",
     website: "https://www.ropegreenmedicalcentre.nhs.uk/",
     category: "gp-surgery",
-    featured: true,
+    featured: false,
     logo: {
       src: "/assets/img/companies/rope-green-medical-centre.png",
     },
