@@ -29,7 +29,7 @@ export const clients: Client[] = [
     name: "Hollowood Chemists",
     website: "https://hollowoodchemists.com/",
     category: "pharmacy",
-    featured: true,
+    featured: false,
     logo: {
       src: "/assets/img/companies/hollowood-chemists.webp",
     },
@@ -171,6 +171,16 @@ export const clients: Client[] = [
     logo: {
       src: "/assets/img/companies/everest-pharmacy.png",
       dark: true,
+    },
+  },
+  {
+    slug: "living-well-partnership",
+    name: "Living Well Partnership",
+    website: "https://livingwellpartnership.nhs.uk/",
+    category: "gp-surgery",
+    featured: true,
+    logo: {
+      src: "/assets/img/companies/living-well-partnership.svg",
     },
   },
   {
